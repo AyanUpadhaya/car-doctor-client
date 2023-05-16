@@ -1,6 +1,19 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProviders";
 
 const Navigation = () => {
+    const {user,logOut} = useContext(AuthContext)
+    const navigate = useNavigate();
+    //handling Logout
+    const handleLogOut = ()=>{
+        logOut()
+        .then(()=>{
+            navigate('/login')
+            localStorage.removeItem('car-access-token')
+        })
+        .catch(err=>console.log(err))
+    }
     return (
         <>
             <div className="navbar bg-base-100">
@@ -43,10 +56,14 @@ const Navigation = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to="/">Home</Link></li>
-                        <li><a>About</a></li>
-                        <li><a>Services</a></li>
-                        <li><a>Blog</a></li>
-                        <li><a>Contact</a></li>
+                        <li><Link to="/about">About</Link></li>
+                        <li><Link to="/services">Services</Link></li>
+                        {
+                            user&&<li><Link to="/bookings">My Bookings</Link></li>
+                        }
+                        <li>{user?<a onClick={handleLogOut}>Logout</a>
+                                :<Link to="/login">Login</Link>
+                            }</li>
                     </ul>
                 </div>
                 <div className="navbar-end">

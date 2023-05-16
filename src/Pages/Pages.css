@@ -1,0 +1,45 @@
+.bookings {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .bookings tr {
+    border: 1px solid black;
+    text-align: center;
+  }
+  .bookings td>img{
+    width: 100px;
+    height: 100px;
+  }
+  .bookings td,
+  .bookings th {
+    padding: 10px;
+  }
+  
+  .bookings th {
+    background-color: lightgray;
+  }
+  
+  .bookings td.status {
+    width: 100px;
+  }
+  
+  .bookings td.status button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .bookings td.status button:hover {
+    background-color: darkred;
+  }
+  
+  .bookings td.status button.confirmed {
+    background-color: green;
+  }
+  
+  .bookings td.status button.confirmed:hover {
+    background-color: darkgreen;
+  }

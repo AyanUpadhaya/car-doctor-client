@@ -7,7 +7,7 @@ import imgFour from './../assets/images/banner/4.jpg'
 const Carousel = () => {
     return (
         <>
-            <div className="carousel w-full h-[600px] md:h-[500px]">
+            <div className="carousel w-full h-[600px] md:h-[500px] mb-[100px]">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src={imgOne} className="w-full rounded-xl" />
                     <div className="absolute top-[0] p-[80px] md:p-[100px] h-full bg-gradient-to-r from-black rounded-xl">
