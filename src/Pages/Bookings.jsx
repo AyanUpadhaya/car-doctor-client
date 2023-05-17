@@ -6,13 +6,7 @@ const Bookings = () => {
     const [bookings,setBookings] = useState([])
     const {user} = useContext(AuthContext)
     useEffect(() => {
-        // const fetchData = async () => {
-        //     const response = await fetch(`http://localhost:3000/bookings?email=${user.email}`);
-        //     const data = await response.json();
-        //     setBookings(data);
-        // };
-        // fetchData();
-
+  
         fetch(`http://localhost:3000/bookings?email=${user.email}`,{
             method:'GET',
             headers: {
