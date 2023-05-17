@@ -18,7 +18,7 @@ const Booking = ({booking}) => {
             alert("Already approved")
             
         }else{
-            fetch(`http://localhost:3000/bookings/${_id}`,{
+            fetch(`https://car-doctor-server-sandy-nine.vercel.app/bookings/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'

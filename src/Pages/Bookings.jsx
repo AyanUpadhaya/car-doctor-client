@@ -7,7 +7,7 @@ const Bookings = () => {
     const {user} = useContext(AuthContext)
     useEffect(() => {
   
-        fetch(`http://localhost:3000/bookings?email=${user.email}`,{
+        fetch(`https://car-doctor-server-sandy-nine.vercel.app/bookings?email=${user.email}`,{
             method:'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('car-access-token')}`

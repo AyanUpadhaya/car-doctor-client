@@ -25,7 +25,7 @@ const Checkout = () => {
         }
 
 
-        fetch('http://localhost:3000/bookings',{
+        fetch('https://car-doctor-server-sandy-nine.vercel.app/bookings',{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'

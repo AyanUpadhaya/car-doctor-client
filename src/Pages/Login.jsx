@@ -37,7 +37,7 @@ const Login = () => {
 
 
                 //hitting JWT token api
-                fetch('http://localhost:3000/jwt',{
+                fetch('https://car-doctor-server-sandy-nine.vercel.app/jwt',{
                     method: 'POST',
                     headers:{
                         'content-type':'application/json'
