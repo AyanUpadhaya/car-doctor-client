@@ -6,12 +6,22 @@ const Bookings = () => {
     const [bookings,setBookings] = useState([])
     const {user} = useContext(AuthContext)
     useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch(`http://localhost:3000/bookings?email=${user.email}`);
-            const data = await response.json();
-            setBookings(data);
-        };
-        fetchData();
+        // const fetchData = async () => {
+        //     const response = await fetch(`http://localhost:3000/bookings?email=${user.email}`);
+        //     const data = await response.json();
+        //     setBookings(data);
+        // };
+        // fetchData();
+
+        fetch(`http://localhost:3000/bookings?email=${user.email}`,{
+            method:'GET',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('car-access-token')}`
+            }
+        })
+        .then(res=>res.json())
+        .then(data=>setBookings(data))
+
     }, []);
     return (
         <table className="bookings">

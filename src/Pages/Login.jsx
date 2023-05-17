@@ -31,8 +31,9 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                const loggedUserEmail= loggedUser.email;
-                console.log(loggedUser)
+                const authentiCatedUser = {
+                    email: loggedUser.email
+                }
 
 
                 //hitting JWT token api
@@ -41,7 +42,7 @@ const Login = () => {
                     headers:{
                         'content-type':'application/json'
                     },
-                    body:JSON.stringify({loggedUserEmail})
+                    body:JSON.stringify(authentiCatedUser)
                 })
                 .then(res=>res.json())
                 .then(data=>{
